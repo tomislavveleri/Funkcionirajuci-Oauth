@@ -4,7 +4,7 @@ import { signOut } from "next-auth/react";
 
 const SignOut = () => {
   const handleSignOut = async () => {
-    await signOut();
+    await signOut(); //built in funkcija iz next-auth reacta
   };
 
   return (

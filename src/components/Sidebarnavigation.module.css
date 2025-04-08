@@ -1,0 +1,22 @@
+.sidebar {
+  background-color: #444;
+  width: 10%;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Adds space between the words */
+}
+.sidebar a {
+  text-decoration: none;
+  color: #00bcd4; /* Bright accent color like in the table */
+  padding: 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #555; /* Subtle hover effect */
+  color: #fff;
+}

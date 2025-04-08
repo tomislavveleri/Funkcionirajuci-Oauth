@@ -1,0 +1,69 @@
+/* Container styling */
+.dataResults {
+  background-color: #444;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Table design */
+.dataResults table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #333;
+}
+
+/* Header design */
+.dataResults th {
+  background-color: #555;
+  color: #f4f4f4;
+  padding: 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Cell design with colorful text */
+.dataResults td {
+  padding: 1rem;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+/* Add color accents for rows */
+.dataResults tr:nth-child(even) td {
+  color: #ff7f50; /* Coral */
+}
+
+.dataResults tr:nth-child(odd) td {
+  color: #87ceeb; /* Sky blue */
+}
+
+/* Highlight hovered row */
+.dataResults tr:hover {
+  background-color: #5a5a5a;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dataResults {
+    padding: 1rem;
+  }
+
+  .dataResults table {
+    font-size: 1rem;
+  }
+}

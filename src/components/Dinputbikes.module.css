@@ -1,0 +1,78 @@
+/* Styling for the form container */
+.dataResults {
+  background-color: #444;
+  padding: 2rem;
+  border-radius: 12px;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Style for the labels */
+.inputLabel {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* Input fields matching the table's style */
+.inputField {
+  background-color: #333;
+  border: 1px solid #555;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.inputField:focus {
+  border-color: #00bcd4;
+}
+
+/* Submit button style */
+.submitButton {
+  background-color: #00bcd4;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.submitButton:hover {
+  background-color: #0097a7;
+}
+.selectDropdown {
+  background-color: #333;
+  border: 1px solid #555;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.3s ease;
+  appearance: none; /* Removes default styles */
+  cursor: pointer;
+}
+
+.selectDropdown:focus {
+  border-color: #00bcd4;
+}
+
+.selectDropdown option {
+  background-color: #444;
+  color: #fff;
+}

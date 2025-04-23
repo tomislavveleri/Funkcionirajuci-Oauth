@@ -15,7 +15,7 @@ export default function Doutputbikes() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("/api/bikes");
+        const response = await fetch("/api/bike");
         const data = await response.json();
         setBikes(data);
       } catch (err) {
@@ -43,7 +43,7 @@ export default function Doutputbikes() {
   const handleSave = async (idBike, action) => {
     try {
       if (action === "update") {
-        const response = await fetch("/api/bikes", {
+        const response = await fetch("/api/bike", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ...editedBike, idBike }), // Include idBike!
@@ -59,7 +59,7 @@ export default function Doutputbikes() {
         console.log("Bike updated successfully!");
       }
       if (action === "delete") {
-        const response = await fetch("/api/bikes", {
+        const response = await fetch("/api/bike", {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ idBike }), // Include idBike!
@@ -98,8 +98,8 @@ export default function Doutputbikes() {
                   <td>
                     <input
                       type="text"
-                      value={editedBike.naziv || ""}
-                      onChange={(e) => handleChange(e, "naziv")}
+                      value={editedBike.bikeName || ""}
+                      onChange={(e) => handleChange(e, "bikeName")}
                     />
                   </td>
                   <td>
@@ -112,15 +112,15 @@ export default function Doutputbikes() {
                   <td>
                     <input
                       type="text"
-                      value={editedBike.godiste || ""}
-                      onChange={(e) => handleChange(e, "godiste")}
+                      value={editedBike.modelYear || ""}
+                      onChange={(e) => handleChange(e, "modelYear")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedBike.infoKomponente || ""}
-                      onChange={(e) => handleChange(e, "infoKomponente")}
+                      value={editedBike.bikeInfo || ""}
+                      onChange={(e) => handleChange(e, "bikeInfo")}
                     />
                   </td>
                   <td>
@@ -135,10 +135,10 @@ export default function Doutputbikes() {
                 </>
               ) : (
                 <>
-                  <td>{bike.naziv}</td>
+                  <td>{bike.bikeName}</td>
                   <td>{bike.model}</td>
-                  <td>{bike.godiste}</td>
-                  <td>{bike.infoKomponente}</td>
+                  <td>{bike.modelYear}</td>
+                  <td>{bike.bikeInfo}</td>
                   <td>
                     <button onClick={() => handleEdit(bike)}>Edit</button>
                   </td>

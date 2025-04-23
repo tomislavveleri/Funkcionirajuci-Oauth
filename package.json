@@ -9,7 +9,8 @@
     "lint": "next lint",
     "db:migrate": "npx prisma migrate dev",
     "db:studio": "npx prisma studio",
-    "db:reset": "prisma migrate reset && prisma migrate dev"
+    "db:reset": "prisma migrate reset && prisma migrate dev",
+    "db:push": "npx prisma db push"
   },
   "prisma": {
     "schema": "src/lib/db/schema.prisma"
@@ -17,6 +18,7 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.8.0",
     "@prisma/client": "^6.5.0",
+    "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "lucide-react": "^0.483.0",
     "next": "15.2.4",

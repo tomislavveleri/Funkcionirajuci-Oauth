@@ -1,5 +1,5 @@
 import { signIn } from "@/lib/auth";
-
+import styles from "@/app/signup/signup.module.css";
 const GitHubSignIn = () => {
   return (
     <form
@@ -8,7 +8,7 @@ const GitHubSignIn = () => {
         await signIn("github");
       }}
     >
-      <button>Continue with gitHub</button>
+      <button className={styles.oauth}>Continue with GitHub</button>
     </form>
   );
 };

@@ -1,0 +1,89 @@
+/* Modern, clean design with harmonious colors */
+
+/* Container styling */
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1e1e2f;
+  color: #dfe6e9;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar styling */
+.topBar {
+  background-color: #444;
+  padding: 1.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Main content area */
+.mainContent {
+  display: flex;
+  height: calc(100vh - 4rem);
+}
+
+/* Sidebar styling */
+.sidebar {
+  background-color: #444;
+  width: 10%;
+  padding: 2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Grid container for main sections */
+.gridContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  flex: 1;
+}
+
+/* Section styles */
+.dataInput {
+  background-color: #444;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-column: 1;
+  grid-row: span 1;
+}
+
+.dataResults {
+  background-color: #444;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.calculations {
+  background-color: #444;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-column: 1;
+  grid-row: 2;
+}

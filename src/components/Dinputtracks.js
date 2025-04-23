@@ -1,37 +1,32 @@
 "use client";
-
-//originalno kao iz aplikacije
-
 import { useState } from "react";
 import axios from "axios";
 import styles from "./Dinputbikes.module.css";
-export default function Dinputbikes() {
-  const [bike, setBike] = useState({
-    bikeName: "",
-    model: "",
-    modelYear: "",
-    bikeInfo: "",
+
+export default function Dinputtracks() {
+  const [track, setTrack] = useState({
+    trackName: "",
+    trackDescription: "",
+    trackGrade: "",
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const handleChange = (e) => {
-    setBike({ ...bike, [e.target.name]: e.target.value });
+    setTrack({ ...track, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setMessage("");
 
     try {
-      const response = await axios.post("/api/bike", bike);
-      setBike({ bikeName: "", model: "", modelYear: "", bikeInfo: "" });
-      setMessage(response.bike.message); // "Bike registered successfully"
-      setBike({
-        bikeName: "",
-        model: "",
-        modelYear: "",
-        bikeInfo: "",
+      const response = await axios.post("/api/tracks", track);
+
+      setMessage(response.track.message); // "Track registered successfully"
+      setTrack({
+        trackName: "",
+        trackDescription: "",
+        trackGrade: "",
       });
     } catch (err) {
       err.response?.data?.error || "Something went wrong. Please try again.";
@@ -42,17 +37,17 @@ export default function Dinputbikes() {
   return (
     <div className={styles.dataResults}>
       <form onSubmit={handleSubmit}>
-        <h2>Enter a bike</h2>
-        {Object.keys(bike).map((key) => (
+        <h2>Enter Track</h2>
+        {Object.keys(track).map((key) => (
           <div key={key}>
             <input
               className={styles.inputField}
-              type="text"
               placeholder={key}
+              value={track[key]}
               name={key}
-              value={bike[key]}
               onChange={handleChange}
-            />
+              type="text"
+            ></input>
           </div>
         ))}
         <button type="submit" className={styles.submitButton}>

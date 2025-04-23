@@ -1,0 +1,87 @@
+.container {
+  height: 300vh;
+  width: 100vw;
+  background-color: #1e1e2f;
+  color: #dfe6e9;
+  font-family: monospace;
+  font-size: xxx-large;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.container button {
+  height: 50px;
+  width: 200px;
+  align-self: center;
+  margin-bottom: 100px;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  flex: 1;
+}
+.textA {
+  padding: 2rem;
+  border-radius: 12px;
+
+  font-weight: bold;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-column: 1;
+  grid-row: span 1;
+}
+.textA img {
+  width: 600px;
+  height: 400px;
+}
+.textB {
+  padding: 2rem;
+  border-radius: 12px;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  grid-column: 1;
+  grid-row: span 1;
+}
+
+.pictureA {
+  padding: 2rem;
+  border-radius: 12px;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.pictureB {
+  padding: 2rem;
+  border-radius: 12px;
+
+  font-weight: bold;
+  font-size: 1.8rem;
+
+  grid-column: 2;
+  grid-row: 2;
+}
+.pictureC {
+  padding: 2rem;
+  border-radius: 12px;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-column: 2;
+  grid-row: 3;
+}

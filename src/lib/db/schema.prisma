@@ -5,7 +5,7 @@ generator client{
     provider = "prisma-client-js"
 }
 datasource db{
-    provider = "sqlite"
+    provider = "mysql"
     url = env("DATABASE_URL")
 }
 model User {
@@ -22,6 +22,10 @@ model User {
  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  bikes Bike[]
+  tracks Track[]
+  setups Setup[]
+  results Result[]
 }
  
 model Account {
@@ -79,4 +83,61 @@ model Authenticator {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
  
   @@id([userId, credentialID])
+}
+model Bike {
+  idBike       Int    @id @default(autoincrement())
+  bikeName String
+  model    String
+  modelYear String
+  bikeInfo String
+  userId   String
+  user     User   @relation(fields: [userId], references: [id])
+
+}
+model Track{
+
+  idTrack Int   @id @default(autoincrement())
+  trackName String 
+  trackDescription String
+  trackGrade String
+  userId    String
+  user     User   @relation(fields: [userId], references: [id])
+
+}
+
+model Setup{
+
+  idSetup Int   @id @default(autoincrement())
+  setupName String
+  frontTyrePressure  String
+  forkPressure  String
+  hsrf  String
+  lsrf  String
+  hscf  String
+  lscf  String
+  tokenNumberf String
+  sagf String
+  rearTyrePressure  String
+  shockPressure  String
+  hsrr  String
+  lsrr String
+  hscr  String
+  lscr String
+  tokenNumberr String
+  sagr String
+
+   userId   String
+  user     User   @relation(fields: [userId], references: [id])
+}
+
+model Result{
+
+  id Int   @id @default(autoincrement())
+  selectedBike String
+  selectedTrack String
+  selectedSetup String
+  trackTime String
+  trackConditions String
+   userId   String
+  user     User   @relation(fields: [userId], references: [id])
 }

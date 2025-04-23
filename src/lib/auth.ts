@@ -48,7 +48,7 @@ export const { auth, handlers, signIn } = NextAuth({
 
   jwt: {
     encode: async function (params) {
-      if (params.token?.crendials) {
+      if (params.token?.credentials) {
         const sessionToken = uuid();
 
         if (!params.token.sub) {

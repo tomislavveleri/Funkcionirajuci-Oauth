@@ -64,6 +64,14 @@ export default function Doutputsetups() {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Front Tyre</th>
+            <th>Fork</th>
+            <th>HSR Fork</th>
+            <th>LSR Fork</th>
+            <th>HSC Fork</th>
+            <th>LSC Fork</th>
+            <th>Tokens Fork</th>
+            <th>SAG Fork</th>
             <th>Rear Tyre</th>
             <th>Shock</th>
             <th>HSR Rear</th>
@@ -71,15 +79,7 @@ export default function Doutputsetups() {
             <th>HSC Rear</th>
             <th>LSC Rear</th>
             <th>Tokens Shock</th>
-            <th>SAG Rear</th>
-            <th>Front Tyre</th>
-            <th>Fork</th>
-            <th>HSR Front</th>
-            <th>LSR Front</th>
-            <th>HSC Front</th>
-            <th>LSC Front</th>
-            <th>Tokens Fork</th>
-            <th>SAG</th>
+            <th>SAG Shock</th>
           </tr>
         </thead>
         <tbody>
@@ -90,119 +90,119 @@ export default function Doutputsetups() {
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.SetupName || ""}
+                      value={editedSetup.setupName || ""}
                       onChange={(e) => handleChange(e, "setupName")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.tlakGumeZadnja || ""}
-                      onChange={(e) => handleChange(e, "frontTyrePressure ")}
+                      value={editedSetup.frontTyrePressure || ""}
+                      onChange={(e) => handleChange(e, "frontTyrePressure")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.tlakShock || ""}
+                      value={editedSetup.forkPressure || ""}
                       onChange={(e) => handleChange(e, "forkPressure")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.HSRZadnji || ""}
+                      value={editedSetup.hsrf || ""}
                       onChange={(e) => handleChange(e, "hsrf")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.LSRZadnji || ""}
+                      value={editedSetup.lsrf || ""}
                       onChange={(e) => handleChange(e, "lsrf")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.HSCZadnji || ""}
+                      value={editedSetup.hscf || ""}
                       onChange={(e) => handleChange(e, "hscf")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.LSCZadnji || ""}
+                      value={editedSetup.lscf || ""}
                       onChange={(e) => handleChange(e, "lscf")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.brojTokenaZadnji || ""}
+                      value={editedSetup.tokenNumberf || ""}
                       onChange={(e) => handleChange(e, "tokenNumberf")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.SAGZadnji || ""}
+                      value={editedSetup.sagf || ""}
                       onChange={(e) => handleChange(e, "sagf")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.tlakGumePrednja || ""}
+                      value={editedSetup.rearTyrePressure || ""}
                       onChange={(e) => handleChange(e, "rearTyrePressure")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.tlakVilica || ""}
+                      value={editedSetup.shockPressure || ""}
                       onChange={(e) => handleChange(e, "shockPressure")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.HSR || ""}
+                      value={editedSetup.hsrr || ""}
                       onChange={(e) => handleChange(e, "hsrr")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.LSR || ""}
+                      value={editedSetup.lsrr || ""}
                       onChange={(e) => handleChange(e, "lsrr")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.HSC || ""}
+                      value={editedSetup.hscr || ""}
                       onChange={(e) => handleChange(e, "hscr")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.LSC || ""}
+                      value={editedSetup.lscr || ""}
                       onChange={(e) => handleChange(e, "lscr")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.brojTokena || ""}
+                      value={editedSetup.tokenNumberr || ""}
                       onChange={(e) => handleChange(e, "tokenNumberr")}
                     />
                   </td>
                   <td>
                     <input
                       type="text"
-                      value={editedSetup.SAG || ""}
+                      value={editedSetup.sagr || ""}
                       onChange={(e) => handleChange(e, "sagr")}
                     />
                   </td>
@@ -234,7 +234,7 @@ export default function Doutputsetups() {
                   <td>{setup.lsrr}</td>
                   <td>{setup.hscr}</td>
                   <td>{setup.lscr}</td>
-                  <td>{setup.tokenNumverr}</td>
+                  <td>{setup.tokenNumberr}</td>
                   <td>{setup.sagr}</td>
 
                   <td>

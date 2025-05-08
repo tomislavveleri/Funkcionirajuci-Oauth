@@ -6,14 +6,16 @@ import Dcalculations from "@/components/Dcalculations";
 import { SignOut } from "@/components/signOut";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-
+import RedirectSettings from "@/components/RedirectSettings";
 const Page = async () => {
   const session = await auth(); //dohvacanje sessiona
   if (!session) redirect("/sign-in"); //provjera ako je session valjan
   return (
     <div className={styles.container}>
       {/* Top bar */}
-      <div className={styles.topBar}>Title User Settings</div>
+      <div className={styles.topBar}>
+        <h1>Results</h1> <RedirectSettings />
+      </div>
 
       <div className={styles.mainContent}>
         {/* Sidebar */}
@@ -33,7 +35,9 @@ const Page = async () => {
           </div>
 
           {/* Calculations */}
-          <div className={styles.calculations}>Calculations</div>
+          <div className={styles.calculations}>
+            <Dcalculations />
+          </div>
         </div>
       </div>
     </div>

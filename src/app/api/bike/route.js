@@ -31,3 +31,55 @@ export async function GET() {
   });
   return Response.json(bikes);
 }
+export async function PUT(req) {
+  const session = await auth();
+  if (!session || !session.user?.id) {
+    return new Response("Unauthorised", { status: 401 });
+  }
+
+  try {
+    const data = await req.json();
+    const updatedBike = await db.bike.update({
+      where: { idBike: data.idBike },
+      data: {
+        model: data.model,
+        modelYear: data.modelYear,
+        bikeInfo: data.bikeInfo,
+        userId: data.userId,
+        bikeName: data.bikeName,
+      },
+    });
+    return Response.json(updatedBike);
+  } catch (err) {
+    console.error("Update error", err);
+    return new Response("Bike not found or you do not have permission", {
+      status: 403,
+    });
+  }
+}
+
+export async function DELETE(req) {
+  const session = await auth();
+  if (!session || !session.user?.id) {
+    return new Response("Unauthorised", { status: 401 });
+  }
+  try {
+    const data = await req.json();
+    const { idBike } = data;
+
+    if (!idBike) {
+      return new Response("Bike id does not exist", { status: 400 });
+    }
+
+    const deletedBike = await db.bike.delete({
+      where: { idBike: idBike },
+    });
+
+    return Response.json(deletedBike);
+  } catch (err) {
+    console.error("Delete error", err);
+    return new Response("Bike not found or you do not have permission", {
+      status: 403,
+    });
+  }
+}

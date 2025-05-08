@@ -54,7 +54,7 @@ export default function Doutputtracks() {
         const response = await fetch("/api/tracks", {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ idTrack }), // Include idBike!
+          body: JSON.stringify({ idTrack }),
         });
 
         if (!response.ok) throw new Error("Failed to delete");

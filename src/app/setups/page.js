@@ -5,7 +5,8 @@ import Dinputsetups from "@/components/Dinputsetups";
 import { SignOut } from "@/components/signOut";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-
+import Dcalculations from "@/components/Dcalculations";
+import RedirectSettings from "@/components/RedirectSettings";
 // Testna stranica koja sluzi za testiranje sessiona
 
 const Page = async () => {
@@ -14,7 +15,9 @@ const Page = async () => {
   return (
     <div className={styles.container}>
       {/* Top bar */}
-      <div className={styles.topBar}>Title User Settings</div>
+      <div className={styles.topBar}>
+        <h1>Setups</h1> <RedirectSettings />
+      </div>
 
       <div className={styles.mainContent}>
         {/* Sidebar */}
@@ -34,7 +37,10 @@ const Page = async () => {
           </div>
 
           {/* Calculations */}
-          <div className={styles.calculations}>Calculations</div>
+          <div className={styles.calculations}>
+            {" "}
+            <Dcalculations />
+          </div>
         </div>
       </div>
     </div>
